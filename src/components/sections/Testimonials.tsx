@@ -43,18 +43,18 @@ const Testimonials = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <Card className="h-full border-muted bg-muted/20">
-                <CardHeader>
+              <Card className="h-full border-muted bg-muted/20 flex flex-col">
+                <CardHeader className="flex-1">
                   <div className="flex gap-1 mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
                       <Star key={i} className="w-5 h-5 fill-primary text-primary" />
                     ))}
                   </div>
-                  <blockquote className="text-lg font-medium leading-relaxed mb-4">
+                  <blockquote className="text-lg font-medium leading-relaxed">
                     "{testimonial.text}"
                   </blockquote>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="pt-0 mt-auto">
                   <div className="font-semibold">{testimonial.name}</div>
                   <div className="text-sm text-muted-foreground">{testimonial.location}</div>
                 </CardContent>

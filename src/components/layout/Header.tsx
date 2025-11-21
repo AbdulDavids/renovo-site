@@ -21,12 +21,12 @@ const Header = () => {
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="flex items-center gap-2">
-          <img 
-            src="/renovo/logo-background-removed.png" 
-            alt="Renovo Cape Logo" 
+          <img
+            src="/renovo/logo-background-removed.png"
+            alt="Renovo Cape Logo"
             className="h-10 w-auto"
           />
-          <span className="text-xl font-bold hidden sm:inline-block">Renovo Cape</span>
+          <span className="text-xl font-bold">Renovo Cape</span>
         </a>
 
         {/* Desktop Nav */}
@@ -64,34 +64,41 @@ const Header = () => {
                 <span className="sr-only">Toggle menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right">
-              <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
-              <div className="flex flex-col gap-4 mt-8">
+            <SheetContent side="right" className="w-[280px] p-0">
+              <div className="flex items-center gap-2 px-6 py-4 border-b">
+                <img
+                  src="/renovo/logo-background-removed.png"
+                  alt="Renovo Cape Logo"
+                  className="h-8 w-auto"
+                />
+                <SheetTitle className="text-lg font-bold">Renovo Cape</SheetTitle>
+              </div>
+              <nav className="flex flex-col px-6 py-4">
                 {navigation.map((item) => (
                   <a
                     key={item.name}
                     href={item.href}
-                    className="text-lg font-medium"
+                    className="py-3 text-base font-medium border-b border-border/50 transition-colors hover:text-primary"
                     onClick={() => setIsOpen(false)}
                   >
                     {item.name}
                   </a>
                 ))}
-                <a 
-                  aria-label="Chat on WhatsApp" 
-                  href={whatsAppUrl} 
-                  target="_blank" 
+                <a
+                  aria-label="Chat on WhatsApp"
+                  href={whatsAppUrl}
+                  target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block transition-transform hover:scale-105 mt-2"
+                  className="mt-6"
                   onClick={() => setIsOpen(false)}
                 >
-                  <img 
-                    alt="Chat on WhatsApp" 
-                    src="/renovo/ChatOnWhatsAppButton/WhatsAppButtonGreenMedium.svg" 
-                    className="h-12 w-auto"
+                  <img
+                    alt="Chat on WhatsApp"
+                    src="/renovo/ChatOnWhatsAppButton/WhatsAppButtonGreenMedium.svg"
+                    className="h-10 w-auto"
                   />
                 </a>
-              </div>
+              </nav>
             </SheetContent>
           </Sheet>
         </div>

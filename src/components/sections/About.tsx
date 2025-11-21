@@ -7,7 +7,7 @@ const features = [
   {
     icon: Wrench,
     title: "Expert Craftsmanship",
-    description: "With over 60 years of combined experience, our highly qualified team delivers expert advice and premium results."
+    description: "With over 60 years of combined experience, our highly qualified team delivers expert advice and premium results for all your home renovation needs."
   },
   {
     icon: ShieldCheck,
@@ -22,7 +22,7 @@ const features = [
   {
     icon: MapPin,
     title: "Serving All of Cape Town",
-    description: "We cover Cape Town, Southern and Northern Suburbs, Stellenbosch, and the entire Western Cape, bringing professional bath re-enameling and restoration services to your doorstep."
+    description: "We cover Cape Town, Southern and Northern Suburbs, Stellenbosch, and the entire Western Cape, bringing professional house renovation services to your doorstep."
   }
 ];
 
@@ -34,7 +34,7 @@ const About = () => {
           <div>
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-6">Cape Town's Bath Re-enameling Experts</h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Renovo Cape is Cape Town's trusted bath re-enameling and restoration specialist. With over 60 years of combined experience, we deliver quality bath resurfacing, tile restoration, and re-enameling services across the Western Cape.
+              Renovo Cape is Cape Town's trusted bath re-enameling and renovation specialist. With over 60 years of combined experience, we deliver quality bath resurfacing, tile restoration, and re-enameling services across the Western Cape.
             </p>
             
             <div className="grid sm:grid-cols-2 gap-6">
@@ -67,15 +67,15 @@ const About = () => {
             </div>
           </div>
           
-          <div className="relative">
+          <div className="relative hidden lg:block">
             <div className="aspect-square rounded-2xl overflow-hidden shadow-xl">
-              <img 
-                src="/renovo/bath-process-worker.jpeg" 
-                alt="Professional bath re-enameling specialist at work in Cape Town" 
+              <img
+                src="/renovo/bath-process-worker.jpeg"
+                alt="Professional bath re-enameling specialist at work in Cape Town"
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="absolute -bottom-6 -right-6 bg-background p-6 rounded-xl shadow-xl border max-w-xs hidden sm:block">
+            <div className="absolute -bottom-6 -right-6 bg-background p-6 rounded-xl shadow-xl border max-w-xs">
               <p className="font-bold text-2xl text-primary mb-1">60+</p>
               <p className="text-muted-foreground">Years Combined Experience</p>
             </div>
