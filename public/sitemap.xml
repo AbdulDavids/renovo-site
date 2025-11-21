@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://renovo.co.za/</loc>
+    <lastmod>2025-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Services Section -->
+  <url>
+    <loc>https://renovo.co.za/#services</loc>
+    <lastmod>2025-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Gallery Section -->
+  <url>
+    <loc>https://renovo.co.za/#gallery</loc>
+    <lastmod>2025-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://renovo.co.za/renovo/bath-after-restored-1.jpeg</image:loc>
+      <image:title>Bath After Restoration - Renovo Cape</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://renovo.co.za/renovo/bath-after-restored-2.jpeg</image:loc>
+      <image:title>Bath Restoration Complete - Renovo Cape</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://renovo.co.za/renovo/bath-before-severe-damage.jpeg</image:loc>
+      <image:title>Bath Before Restoration - Severe Damage</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://renovo.co.za/renovo/bath-mid-restoration.jpeg</image:loc>
+      <image:title>Bath Mid Restoration Process</image:title>
+    </image:image>
+  </url>
+
+  <!-- About Section -->
+  <url>
+    <loc>https://renovo.co.za/#about</loc>
+    <lastmod>2025-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Testimonials Section -->
+  <url>
+    <loc>https://renovo.co.za/#testimonials</loc>
+    <lastmod>2025-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Contact Section -->
+  <url>
+    <loc>https://renovo.co.za/#contact</loc>
+    <lastmod>2025-11-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- LLMs.txt for AI/LLM crawlers -->
+  <url>
+    <loc>https://renovo.co.za/llms.txt</loc>
+    <lastmod>2025-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+</urlset>
+
