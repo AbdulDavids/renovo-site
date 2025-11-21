@@ -83,7 +83,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t mt-12 pt-8 text-center text-sm">
-          <p>&copy; {currentYear} Renovo Cape. All rights reserved.</p>
+          <p>&copy; {currentYear} Renovo Cape. All rights reserved. Crafted with ☕️ by <a href="https://abduldavids.co.za" target="_blank" rel="noopener noreferrer" className="hover:text-primary">Abdul Davids</a></p>
         </div>
       </div>
     </footer>

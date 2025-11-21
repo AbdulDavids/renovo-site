@@ -1,0 +1,69 @@
+# Renovo Cape
+
+> Restoration at its best! Professional restoration and enameling company based in Pinelands, Cape Town, South Africa, with over 60 years of combined experience. Specializing in bath, basin, and toilet re-enameling with a 5-year warranty on all work.
+
+Renovo Cape delivers quality products and services for restoration work throughout the Western Cape. The company offers free no obligation quotes and performs restoration works both on-site and off-site. Their vision centers on three core principles: Quality Advice, Quality Products, and Quality Service.
+
+Key differentiators include a comprehensive 5-year warranty on all re-enameling work, mobile service capabilities across the entire Western Cape region, and a highly qualified team with decades of restoration experience. The company saves clients thousands by restoring existing fixtures rather than requiring costly replacements.
+
+## Services
+
+- Bath, Basin and Toilet Re-enameling: Complete re-enameling services with 5-year warranty
+- Counter-Top Restoration: Professional restoration and resurfacing of kitchen and bathroom counters
+- Shower Trays and Tile Resurfacing: Restore and resurface shower trays and bathroom tiles
+- Kitchen and Bedroom Cupboard Respraying: Complete refinishing of cupboards
+- Epoxy Coating: Durable epoxy coating applications for various surfaces
+- Chip Repairs: Expert repair of chips in basins, baths, and other fixtures
+- Crack and Hole Refillings: Professional filling and sealing of cracks and holes
+- Polishing Services: Polishing of baths, sinks, and other fixtures
+- Appliance Resurfacing: Restore the surface of household appliances
+- Re-enameling Specialists: Baths, jacuzzis, urinals, sinks, and shower trays
+
+## Contact Information
+
+- **Phone (M Thiart)**: 074 202 5700
+- **Phone (Dean)**: 062 063 0066
+- **WhatsApp**: [061 199 0191](https://wa.me/27611990191)
+- **Email**: renovocape@gmail.com
+- **Physical Address**: 43 Scouts Pl, Pinelands, Cape Town, 7405
+- **Google Maps**: [View Location](https://maps.app.goo.gl/BRuE5JMUKuoQb9SH7)
+
+## Service Coverage
+
+Renovo Cape provides comprehensive coverage across the entire Western Cape region, including Cape Town and all surrounding suburbs, the greater Cape Town metropolitan area, and throughout the Western Cape province. Mobile service capabilities allow professional restoration work to be brought directly to clients' locations.
+
+## Customer Testimonials
+
+**Wajeeha Jattiem** (Cape Town) - ⭐⭐⭐⭐⭐
+
+"I can't believe how amazing my bath looks! It was badly scratched and stained, but Renovo Cape made it look brand new. The team was professional, kept everything spotless, and the 5-year warranty gives me real peace of mind. Well worth it."
+
+**Michael van der Merwe** (Tokai) - ⭐⭐⭐⭐⭐
+
+"I was about to rip out my entire bathroom until I found Renovo Cape. They saved me thousands with their re-enameling service. The results are incredible – you'd never know it wasn't a new installation. Highly recommend them."
+
+**Elena Koumantarakis** (Sea Point) - ⭐⭐⭐⭐⭐
+
+"Exceptional work from start to finish. They repaired a deep chip in my basin and resurfaced the shower tray. You honestly can't tell there was ever any damage. The quality and attention to detail are outstanding."
+
+## Key Features
+
+- **60+ Years Combined Experience**: Highly qualified team with decades of restoration expertise
+- **5-Year Warranty**: Comprehensive warranty on all re-enameling work
+- **Free Quotes**: No obligation quotes provided for all projects
+- **Mobile Service**: On-site and off-site restoration work available
+- **Full Western Cape Coverage**: Service throughout the entire Western Cape region
+- **Cost-Effective**: Save thousands compared to complete fixture replacement
+
+## Website
+
+This website is built with modern technologies: Vite + React + TypeScript, styled with Tailwind CSS v4 and shadcn/ui components. The design emphasizes responsive, mobile-friendly interaction with integrated WhatsApp click-to-chat functionality for instant communication and quote requests.
+
+### Site Sections
+
+- **Hero**: Introduction with tagline "Restoration at its best!" and primary WhatsApp call-to-action
+- **Services**: Comprehensive grid of all restoration services offered
+- **Gallery**: Before-and-after photos showcasing restoration quality and transformation
+- **About**: Company information, 60+ years experience, 5-year warranty details, and Western Cape coverage
+- **Testimonials**: Customer reviews and ratings from satisfied clients
+- **Contact**: Multiple contact methods including phone, WhatsApp, email, and Google Maps location

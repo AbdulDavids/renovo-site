@@ -1,0 +1,13 @@
+# Renovo Cape - robots.txt
+# Allow all web crawlers full access
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://renovo.co.za/sitemap.xml
+
+# LLM-friendly content
+# See https://llmstxt.org/
+Allow: /llms.txt
+

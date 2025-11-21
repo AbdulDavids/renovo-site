@@ -62,7 +62,7 @@ const Gallery = () => {
     <section id="gallery" className="py-20">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">Re-enameling Before & After Gallery</h2>
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">Gallery</h2>
           <p className="text-lg text-muted-foreground">
             See our resurfacing and re-enameling transformations in Cape Town. Real projects showcasing our professional restoration work from severe damage to brand new.
           </p>
