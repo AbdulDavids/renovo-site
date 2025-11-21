@@ -37,7 +37,7 @@ const ServiceCoverageMapInteractive = () => {
             <div className="p-2">
               <p className="font-semibold text-sm mb-1">Western Cape Coverage Area</p>
               <p className="text-xs text-muted-foreground">
-                Professional bath re-enameling services across Cape Town and surrounding areas
+                Professional restoration and re-enameling services across Cape Town and surrounding areas
               </p>
             </div>
           </MapPopup>

@@ -3,13 +3,13 @@ import { Bath, Eraser, Hammer, PaintBucket, Sparkles, Grid } from "lucide-react"
 
 const services = [
   {
-    title: "Bath Re-enameling Cape Town",
-    description: "Professional bath resurfacing and re-enameling. Restore your bath, jacuzzi, or shower tray to look brand new. 5-year warranty on all work.",
+    title: "Re-enameling Services",
+    description: "Professional resurfacing and re-enameling for baths, basins, jacuzzis, shower trays, and more. Restore fixtures to look brand new. 5-year warranty on all work.",
     icon: Bath,
   },
   {
-    title: "Bath Restoration & Chip Repairs",
-    description: "Expert repair of chips, cracks, and holes in baths and basins. Fast, affordable restoration services across the Greater Cape Town Area.",
+    title: "Chip & Crack Repairs",
+    description: "Expert repair of chips, cracks, and holes in baths, basins, and counter-tops. Fast, affordable restoration services across the Greater Cape Town Area.",
     icon: Hammer,
   },
   {
@@ -28,8 +28,8 @@ const services = [
     icon: Grid,
   },
   {
-    title: "Bath & Sink Polishing",
-    description: "Restore the shine to your bathroom fixtures. Professional polishing services that bring back the original luster.",
+    title: "Fixture Polishing",
+    description: "Restore the shine to baths, sinks, and other fixtures. Professional polishing services that bring back the original luster.",
     icon: Sparkles,
   },
 ];
@@ -39,9 +39,9 @@ const Services = () => {
     <section id="services" className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">Bath Re-enameling & Restoration Services</h2>
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">Re-enameling & Restoration Services</h2>
           <p className="text-lg text-muted-foreground">
-            Professional bath resurfacing, re-enameling, and restoration services across the Western Cape. All our re-enameling work comes with a 5-year warranty.
+            Professional resurfacing, re-enameling, and restoration services across the Western Cape. All our re-enameling work comes with a 5-year warranty.
           </p>
         </div>
 

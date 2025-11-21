@@ -32,9 +32,9 @@ const About = () => {
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-6">Cape Town's Bath Re-enameling Experts</h2>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-6">Cape Town's Re-enameling Experts</h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Renovo Cape is Cape Town's trusted bath re-enameling and renovation specialist. With over 60 years of combined experience, we deliver quality bath resurfacing, tile restoration, and re-enameling services across the Western Cape.
+              Renovo Cape is Cape Town's trusted restoration and re-enameling specialist. With over 60 years of combined experience, we deliver quality resurfacing, restoration, and re-enameling services across the Western Cape.
             </p>
             
             <div className="grid sm:grid-cols-2 gap-6">
@@ -71,7 +71,7 @@ const About = () => {
             <div className="aspect-square rounded-2xl overflow-hidden shadow-xl">
               <img
                 src="/renovo/bath-process-worker.jpeg"
-                alt="Professional bath re-enameling specialist at work in Cape Town"
+                alt="Professional re-enameling and restoration specialist at work in Cape Town"
                 className="w-full h-full object-cover"
               />
             </div>

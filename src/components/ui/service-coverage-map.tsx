@@ -25,7 +25,7 @@ const ServiceCoverageMap = () => {
         <div>
           <h4 className="font-semibold text-xl mb-2">Western Cape Service Coverage</h4>
           <p className="text-muted-foreground">
-            Professional bath re-enameling and restoration services across Cape Town and surrounding areas
+            Professional restoration and re-enameling services across Cape Town and surrounding areas
           </p>
         </div>
       </div>

@@ -3,39 +3,57 @@ import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 const images = [
   {
     src: "/renovo/bath-before-severe-damage.jpeg",
-    alt: "Bath re-enameling Cape Town - severe damage before restoration",
-    label: "Before",
+    alt: "Severely damaged bath with extensive chipping and wear showing the condition before professional re-enameling restoration by Renovo Cape",
+    label: "Before - Severe Damage",
     category: "Process"
   },
   {
     src: "/renovo/bath-mid-restoration.jpeg",
-    alt: "Bath resurfacing process Cape Town - restoration in progress",
-    label: "In Progress",
+    alt: "Restoration in progress showing professional grinding and surface preparation during the re-enameling process in Cape Town",
+    label: "Restoration in Progress",
     category: "Process"
   },
   {
     src: "/renovo/bath-after-restored-1.jpeg",
-    alt: "Bath re-enameling Cape Town - fully restored bath after resurfacing",
-    label: "After",
+    alt: "Fully restored bath with pristine white enamel finish showcasing flawless results after complete resurfacing and re-enameling",
+    label: "After - Fully Restored",
     category: "Result"
   },
   {
     src: "/renovo/bath-before-chips-marked.jpeg",
-    alt: "Bath restoration Cape Town - chips marked for repair assessment",
-    label: "Assessment",
+    alt: "Professional damage assessment with chips and imperfections carefully marked before restoration begins",
+    label: "Before - Assessment",
     category: "Process"
   },
   {
     src: "/renovo/bath-process-worker.jpeg",
-    alt: "Professional bath re-enameling specialist Cape Town at work",
-    label: "Expertise",
+    alt: "Experienced Renovo Cape technician in full safety gear performing professional re-enameling with specialized equipment",
+    label: "Expert at Work",
     category: "Team"
   },
   {
     src: "/renovo/bath-after-restored-2.jpeg",
-    alt: "Bath resurfacing Cape Town - restored gleaming white bath",
-    label: "After",
+    alt: "Beautifully restored bath gleaming with new white enamel finish demonstrating premium quality restoration craftsmanship",
+    label: "After - Perfect Finish",
     category: "Result"
+  },
+  {
+    src: "/renovo/bath-re-enameling.jpg",
+    alt: "Elegant freestanding bath with flawless white re-enameling in modern bathroom showcasing professional restoration excellence",
+    label: "Freestanding Bath Restored",
+    category: "Result"
+  },
+  {
+    src: "/renovo/sink-counter-re-enameling.jpg",
+    alt: "Dual basin counter-top with marble-effect finish expertly resurfaced and restored to pristine condition with matching mirror cabinets",
+    label: "Counter-Top & Basin After",
+    category: "Result"
+  },
+  {
+    src: "/renovo/bath-before-damage-closeup.jpeg",
+    alt: "Close-up detail of fixture damage including chips, cracks and surface wear requiring professional re-enameling restoration",
+    label: "Before - Damage Detail",
+    category: "Process"
   }
 ];
 
@@ -44,9 +62,9 @@ const Gallery = () => {
     <section id="gallery" className="py-20">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">Bath Re-enameling Before & After Gallery</h2>
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">Re-enameling Before & After Gallery</h2>
           <p className="text-lg text-muted-foreground">
-            See our bath resurfacing and re-enameling transformations in Cape Town. Real projects showcasing our professional restoration work from severe damage to brand new.
+            See our resurfacing and re-enameling transformations in Cape Town. Real projects showcasing our professional restoration work from severe damage to brand new.
           </p>
         </div>
 

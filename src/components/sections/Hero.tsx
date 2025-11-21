@@ -23,14 +23,15 @@ const Hero = () => {
               Over 60 Years Experience
             </div>
             <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl mb-6">
-              Restoration <br className="hidden sm:inline" />
+              <span className="whitespace-nowrap">Restoration{" "}</span>
+              <br className="hidden sm:inline" />
               <ContainerTextFlip 
                 words={["made easy", "done right", "at its best!"]} 
-                className="text-primary"
+                className="text-primary whitespace-nowrap"
               />
             </h1>
             <p className="mx-auto max-w-[700px] text-lg text-muted-foreground lg:mx-0 mb-8">
-              Expert bath re-enameling and restoration services across the Western Cape. We specialize in bath resurfacing, tile restoration, and cupboard respraying. Transform your bathroom without replacing it.
+              Expert restoration and re-enameling services across the Western Cape. We specialize in resurfacing, restoration, and respraying for bathrooms, kitchens, and more. Transform your home without replacing it.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
               <a 
@@ -67,7 +68,7 @@ const Hero = () => {
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border bg-muted">
                <img 
                 src="/renovo/bath-hero.jpeg" 
-                alt="Professional bath re-enameling and restoration - beautifully restored bathtub" 
+                alt="Professional re-enameling and restoration - beautifully restored fixtures" 
                 className="w-full h-auto object-cover aspect-[4/3]"
               />
               <div className="absolute inset-0 ring-1 ring-inset ring-black/10 rounded-2xl" />

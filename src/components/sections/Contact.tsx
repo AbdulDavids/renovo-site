@@ -9,9 +9,9 @@ const Contact = () => {
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-6">Get Your Free Bath Re-enameling Quote</h2>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-6">Get Your Free Restoration Quote</h2>
             <p className="text-lg text-primary-foreground/80 mb-8 max-w-md">
-              Contact Renovo Cape for a free, no-obligation quote for bath resurfacing, re-enameling, and restoration services in Cape Town and the Western Cape.
+              Contact Renovo Cape for a free, no-obligation quote for resurfacing, re-enameling, and restoration services in Cape Town and the Western Cape.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
