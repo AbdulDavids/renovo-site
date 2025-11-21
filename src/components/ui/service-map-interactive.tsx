@@ -53,6 +53,7 @@ const ServiceCoverageMapInteractive = () => {
         <MapMarker
           position={parrowPosition}
           icon={<MapPin className="size-6 text-destructive" />}
+          alt="Renovo Cape Office Location"
         >
           <MapPopup>
             <div className="p-2">

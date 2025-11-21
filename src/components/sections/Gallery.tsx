@@ -54,17 +54,20 @@ const Gallery = () => {
           {images.map((image, index) => (
             <Dialog key={index}>
               <DialogTrigger asChild>
-                <div className="group relative cursor-pointer overflow-hidden rounded-xl bg-muted aspect-[4/3]">
-                  <img 
-                    src={image.src} 
-                    alt={image.alt} 
+                <button
+                  className="group relative overflow-hidden rounded-xl bg-muted aspect-[4/3] w-full text-left"
+                  aria-label={`View ${image.label} image: ${image.alt}`}
+                >
+                  <img
+                    src={image.src}
+                    alt={image.alt}
                     className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-black/0 transition-colors group-hover:bg-black/20" />
                   <div className="absolute bottom-4 left-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm font-medium backdrop-blur-sm">
                     {image.label}
                   </div>
-                </div>
+                </button>
               </DialogTrigger>
               <DialogContent className="max-w-4xl p-0 overflow-hidden bg-transparent border-none shadow-none">
                 <img 

@@ -457,6 +457,7 @@ function MapMarker({
     bgPos,
     popupAnchor,
     tooltipAnchor,
+    alt,
     ...props
 }: Omit<MarkerProps, "icon"> &
     Pick<
@@ -465,14 +466,17 @@ function MapMarker({
     > & {
         icon?: ReactNode
         ref?: Ref<Marker>
+        alt?: string
     }) {
     const { L } = useLeaflet()
     if (!L) return null
 
+    const ariaLabel = alt ? ` aria-label="${alt}"` : ""
+
     return (
         <LeafletMarker
             icon={L.divIcon({
-                html: renderToString(icon),
+                html: `<div${ariaLabel}>${renderToString(icon)}</div>`,
                 iconAnchor,
                 ...(bgPos ? { bgPos } : {}),
                 ...(popupAnchor ? { popupAnchor } : {}),
