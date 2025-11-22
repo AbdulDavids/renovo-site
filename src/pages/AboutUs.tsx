@@ -1,5 +1,6 @@
 import { CheckCircle2, ShieldCheck, MapPin, Wrench, Award, Users } from "lucide-react";
 import { lazy, Suspense, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { useDocumentMeta } from "@/hooks/useDocumentMeta";
@@ -31,8 +32,8 @@ const features = [
 
 const AboutUs = () => {
   useDocumentMeta({
-    title: "About Us | Renovo Cape - 60+ Years Restoration Experience",
-    description: "Renovo Cape is Cape Town's premier restoration and re-enameling specialist. Over 60 years of combined experience, 5-year warranty on all re-enameling work, serving the entire Western Cape.",
+    title: "About Renovo Cape | Bath Re-enameling & Restoration Experts Cape Town",
+    description: "Cape Town's trusted bath re-enameling & restoration specialists. 60+ years experience, 5-year warranty. Serving Western Cape with quality service.",
     keywords: "about renovo cape, restoration company cape town, re-enameling experts, bath restoration western cape, professional restoration services",
     ogTitle: "About Renovo Cape | Cape Town's Re-enameling Experts",
     ogDescription: "Over 60 years of combined experience in restoration and re-enameling. 5-year warranty on all work. Serving all of Cape Town and Western Cape.",
@@ -100,14 +101,14 @@ const AboutUs = () => {
               {/* Company Description - Optimized for Google's "In their own words" */}
               <div className="prose prose-lg max-w-none mb-8">
                 <p className="text-lg leading-relaxed text-foreground">
-                  Renovo Cape is Cape Town's premier restoration and re-enameling specialist, 
+                  Renovo Cape is Cape Town's premier <Link to="/services/bath-resurfacing" className="text-primary hover:underline">restoration and re-enameling specialist</Link>, 
                   serving homeowners and businesses across the Western Cape. We deliver quality 
                   products and service for restoration work, with our highly qualified team bringing 
                   over 60 years of combined experience to every project. We provide expert advice 
-                  and premium results for bath, basin and toilet re-enameling, counter-top restoration, 
+                  and premium results for <Link to="/services/bath-resurfacing" className="text-primary hover:underline">bath, basin and toilet re-enameling</Link>, counter-top restoration, 
                   shower tray and tile resurfacing, kitchen and bedroom cupboard respraying, and 
                   epoxy coating. All our re-enameling work comes with a comprehensive 5-year warranty. 
-                  We offer free no-obligation quotes and perform restoration works both on-site and 
+                  We offer <Link to="/#contact" className="text-primary hover:underline">free no-obligation quotes</Link> and perform restoration works both on-site and 
                   off-site across the entire Western Cape region. Our vision is simple: Quality Advice, 
                   Quality Products, and Quality Service.
                 </p>
@@ -139,13 +140,12 @@ const AboutUs = () => {
                   <p>
                     With over 60 years of combined experience, our highly qualified team has mastered 
                     the art and science of restoration. We use only quality products and proven 
-                    techniques to ensure a durable, long-lasting finish that you can trust.
+                    techniques to ensure a durable, long-lasting finish that you can trust. Learn more about <Link to="/#services" className="text-primary hover:underline">our full range of services</Link>.
                   </p>
                   <p>
                     We serve all of Cape Town, including the Southern and Northern 
-                    Suburbs, Stellenbosch, and the entire Western Cape region. Whether you need a 
-                    single bath re-enameled or a complete home restoration project, we bring the 
-                    same level of expertise and attention to detail to every job.
+                    Suburbs, Stellenbosch, and the entire Western Cape region. Whether you need a <Link to="/services/bath-resurfacing" className="text-primary hover:underline">single bath re-enameled</Link> or a complete home restoration project, we bring the 
+                    same level of expertise and attention to detail to every job. Have questions? Check out our <Link to="/faq" className="text-primary hover:underline">frequently asked questions</Link>.
                   </p>
                 </div>
               </div>
@@ -231,7 +231,7 @@ const AboutUs = () => {
                   <div>
                     <h3 className="font-semibold mb-1">Free No Obligation Quote</h3>
                     <p className="text-sm text-muted-foreground">
-                      Get a detailed quote with no strings attached. We'll assess your needs and 
+                      Get a detailed quote with no strings attached. <Link to="/#contact" className="text-primary hover:underline">Contact us today</Link> and we'll assess your needs and 
                       provide transparent pricing.
                     </p>
                   </div>
@@ -339,7 +339,7 @@ const AboutUs = () => {
             </h2>
             <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
               Get your free, no-obligation quote today. Let's discuss how we can restore your 
-              home to its former glory.
+              home to its former glory. <Link to="/" className="underline hover:no-underline">Return to homepage</Link> to see our work.
             </p>
             <a
               href="https://wa.me/27611990191?text=Hi%20Renovo%20Cape%2C%20I%27d%20like%20a%20free%20quote%20for%20restoration%20work."
