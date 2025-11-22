@@ -1,4 +1,5 @@
 import { Phone, Mail, MapPin, Instagram, Facebook } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -6,7 +7,7 @@ const Footer = () => {
   return (
     <footer className="bg-muted text-muted-foreground border-t">
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand Info */}
           <div>
             <div className="flex items-center gap-2 mb-4">
@@ -18,8 +19,30 @@ const Footer = () => {
               <span className="text-lg font-bold text-foreground">Renovo Cape</span>
             </div>
             <p className="text-sm leading-relaxed mb-4">
-              Professional restoration and re-enameling services in Cape Town. Over 60 years of combined experience delivering quality resurfacing and restoration across the Western Cape.
+              Best bath resurfacing company in Cape Town. Expert bathtub reglazing, bath re-enameling, and bathroom restoration services. Over 60 years of combined experience. Serving Cape Town, Southern Suburbs, Northern Suburbs, and the entire Western Cape. Make your old bath look new with our 5-year warranty.
             </p>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h3 className="font-semibold text-foreground mb-4">Quick Links</h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <a href="/#services" className="hover:text-primary transition-colors">Services</a>
+              </li>
+              <li>
+                <a href="/#gallery" className="hover:text-primary transition-colors">Gallery</a>
+              </li>
+              <li>
+                <Link to="/about-us" className="hover:text-primary transition-colors">About Us</Link>
+              </li>
+              <li>
+                <Link to="/faq" className="hover:text-primary transition-colors">FAQ</Link>
+              </li>
+              <li>
+                <a href="/#contact" className="hover:text-primary transition-colors">Contact</a>
+              </li>
+            </ul>
           </div>
 
           {/* Social Links */}

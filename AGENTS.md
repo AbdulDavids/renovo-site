@@ -45,8 +45,6 @@ Renovo Cape delivers quality products and service for restoration work. Their hi
 - **Email:** renovocape@gmail.com
 - **Office:** Parow, Western Cape
 
-### Partner
-- Bopilu Construction
 
 ## Design Direction
 

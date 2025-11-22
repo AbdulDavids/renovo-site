@@ -1,26 +1,23 @@
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
-import Hero from "@/components/sections/Hero";
-import Services from "@/components/sections/Services";
-import Gallery from "@/components/sections/Gallery";
-import Testimonials from "@/components/sections/Testimonials";
-import About from "@/components/sections/About";
-import Contact from "@/components/sections/Contact";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "@/pages/Home";
+import AboutUs from "@/pages/AboutUs";
+import FAQ from "@/pages/FAQ";
+import NotFound from "@/pages/NotFound";
+import BathResurfacing from "@/pages/services/BathResurfacing";
+import CrackedSinkRepair from "@/pages/services/CrackedSinkRepair";
 
 function App() {
   return (
-    <div className="min-h-screen bg-background flex flex-col font-sans antialiased">
-      <Header />
-      <main className="flex-1">
-        <Hero />
-        <Services />
-        <Gallery />
-        <Testimonials />
-        <About />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/faq" element={<FAQ />} />
+        <Route path="/services/bath-resurfacing" element={<BathResurfacing />} />
+        <Route path="/services/cracked-sink-repair" element={<CrackedSinkRepair />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </Router>
   );
 }
 
