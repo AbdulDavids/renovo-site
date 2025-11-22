@@ -76,7 +76,10 @@ const Services = () => {
                     to={service.link}
                     className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline mt-auto"
                   >
-                    Learn more
+                    {service.title === "Bath & Sink Re-enameling" 
+                      ? "Learn more about bath resurfacing"
+                      : "Learn more about sink and bath repair"
+                    }
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                 )}
