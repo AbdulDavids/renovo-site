@@ -125,11 +125,6 @@ const CrackedSinkRepair = () => {
                   alt="Cracked sink before repair - Cape Town"
                   className="rounded-2xl shadow-xl mb-4"
                 />
-                <img
-                  src="/renovo/bath-after-restored-2.jpeg"
-                  alt="Repaired sink after restoration - Cape Town"
-                  className="rounded-2xl shadow-xl"
-                />
               </div>
             </div>
           </div>
