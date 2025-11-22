@@ -1,5 +1,5 @@
 import { CheckCircle2, ShieldCheck, MapPin, Wrench, Award, Users } from "lucide-react";
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { useDocumentMeta } from "@/hooks/useDocumentMeta";
@@ -32,7 +32,7 @@ const features = [
 const AboutUs = () => {
   useDocumentMeta({
     title: "About Us | Renovo Cape - 60+ Years Restoration Experience",
-    description: "Learn about Renovo Cape, Cape Town's trusted restoration and re-enameling specialists. Over 60 years of combined experience, 5-year warranty, serving all of Western Cape.",
+    description: "Renovo Cape is Cape Town's premier restoration and re-enameling specialist. Over 60 years of combined experience, 5-year warranty on all re-enameling work, serving the entire Western Cape.",
     keywords: "about renovo cape, restoration company cape town, re-enameling experts, bath restoration western cape, professional restoration services",
     ogTitle: "About Renovo Cape | Cape Town's Re-enameling Experts",
     ogDescription: "Over 60 years of combined experience in restoration and re-enameling. 5-year warranty on all work. Serving all of Cape Town and Western Cape.",
@@ -40,17 +40,81 @@ const AboutUs = () => {
     canonical: "https://renovo.co.za/about-us"
   });
 
+  // Add structured data for better Google understanding
+  useEffect(() => {
+    const structuredData = {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "mainEntity": {
+        "@type": "LocalBusiness",
+        "@id": "https://renovo.co.za/#organization",
+        "name": "Renovo Cape",
+        "description": "Renovo Cape is Cape Town's premier restoration and re-enameling specialist, serving homeowners and businesses across the Western Cape. We deliver quality products and service for restoration work, with our highly qualified team bringing over 60 years of combined experience to every project. We provide expert advice and premium results for bath, basin and toilet re-enameling, counter-top restoration, shower tray and tile resurfacing, kitchen and bedroom cupboard respraying, and epoxy coating. All our re-enameling work comes with a comprehensive 5-year warranty.",
+        "url": "https://renovo.co.za",
+        "telephone": "+27742025700",
+        "email": "renovocape@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Parow",
+          "addressRegion": "Western Cape",
+          "addressCountry": "ZA"
+        },
+        "areaServed": {
+          "@type": "GeoCircle",
+          "geoMidpoint": {
+            "@type": "GeoCoordinates",
+            "latitude": -33.9249,
+            "longitude": 18.4241
+          },
+          "geoRadius": "50000"
+        },
+        "slogan": "Restoration at its best!",
+        "foundingDate": "2015",
+        "priceRange": "$$",
+        "paymentAccepted": "Cash, Bank Transfer",
+        "openingHours": "Mo-Fr 08:00-17:00",
+        "image": "https://renovo.co.za/renovo/logo-square.jpeg"
+      }
+    };
+
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(structuredData);
+    document.head.appendChild(script);
+
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-background flex flex-col font-sans antialiased">
       <Header />
       <main className="flex-1">
-        {/* Hero Section */}
+        {/* Hero Section with About Us Header */}
         <section className="py-20 bg-gradient-to-b from-primary/5 to-background">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center">
-              <h1 className="text-4xl font-bold tracking-tight sm:text-5xl mb-6">About Us</h1>
-              <p className="text-xl text-muted-foreground">
-                Cape Town's trusted restoration and re-enameling specialists since our founding. 
+            <div className="max-w-4xl mx-auto">
+              <h1 className="text-4xl font-bold tracking-tight sm:text-5xl mb-8 text-center">About Us</h1>
+              
+              {/* Company Description - Optimized for Google's "In their own words" */}
+              <div className="prose prose-lg max-w-none mb-8">
+                <p className="text-lg leading-relaxed text-foreground">
+                  Renovo Cape is Cape Town's premier restoration and re-enameling specialist, 
+                  serving homeowners and businesses across the Western Cape. We deliver quality 
+                  products and service for restoration work, with our highly qualified team bringing 
+                  over 60 years of combined experience to every project. We provide expert advice 
+                  and premium results for bath, basin and toilet re-enameling, counter-top restoration, 
+                  shower tray and tile resurfacing, kitchen and bedroom cupboard respraying, and 
+                  epoxy coating. All our re-enameling work comes with a comprehensive 5-year warranty. 
+                  We offer free no-obligation quotes and perform restoration works both on-site and 
+                  off-site across the entire Western Cape region. Our vision is simple: Quality Advice, 
+                  Quality Products, and Quality Service.
+                </p>
+              </div>
+              
+              <p className="text-xl text-muted-foreground text-center">
+                Cape Town's trusted restoration and re-enameling specialists. 
                 We bring decades of experience and unwavering commitment to quality to every project.
               </p>
             </div>
@@ -63,20 +127,19 @@ const AboutUs = () => {
             <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
               <div>
                 <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-6">
-                  Renovo Cape: Cape Town's Re-enameling Experts
+                  Why Choose Renovo Cape
                 </h2>
                 <div className="prose prose-lg max-w-none text-muted-foreground space-y-4">
                   <p>
-                    Renovo Cape is Cape Town's premier restoration and re-enameling specialist, 
-                    serving homeowners and businesses across the Western Cape. Our name "Renovo" 
-                    means "to renew" or "to restore" in Latin, which perfectly captures our mission: 
-                    bringing new life to your bathrooms, kitchens, and living spaces.
+                    Our name "Renovo" means "to renew" or "to restore" in Latin, which perfectly 
+                    captures our mission: bringing new life to your bathrooms, kitchens, and living 
+                    spaces. We don't just repair surfaces – we transform them, delivering results 
+                    that look and feel brand new while being far more cost-effective than replacement.
                   </p>
                   <p>
                     With over 60 years of combined experience, our highly qualified team has mastered 
-                    the art and science of restoration. We don't just repair surfaces – we transform 
-                    them, delivering results that look and feel brand new while being far more 
-                    cost-effective than replacement.
+                    the art and science of restoration. We use only quality products and proven 
+                    techniques to ensure a durable, long-lasting finish that you can trust.
                   </p>
                   <p>
                     We serve all of Cape Town, including the Southern and Northern 
@@ -93,6 +156,10 @@ const AboutUs = () => {
                     src="/renovo/bath-process-worker.jpeg"
                     alt="Professional re-enameling and restoration specialist at work in Cape Town"
                     className="w-full h-full object-cover"
+                    loading="lazy"
+                    decoding="async"
+                    width="600"
+                    height="600"
                   />
                 </div>
                 <div className="absolute -bottom-6 -right-6 bg-background p-6 rounded-xl shadow-xl border max-w-xs">
@@ -139,9 +206,9 @@ const AboutUs = () => {
               </div>
             </div>
 
-            {/* Why Choose Us */}
+            {/* Key Features */}
             <div className="mb-20">
-              <h2 className="text-3xl font-bold tracking-tight text-center mb-12">Why Choose Renovo Cape</h2>
+              <h2 className="text-3xl font-bold tracking-tight text-center mb-12">What Sets Us Apart</h2>
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 {features.map((feature, index) => (
                   <div key={index} className="bg-card border rounded-lg p-6 hover:shadow-lg transition-shadow">
