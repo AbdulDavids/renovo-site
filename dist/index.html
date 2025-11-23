@@ -13,8 +13,8 @@
     <meta charset="UTF-8" />
     
     <!-- Favicons - Multiple formats for better compatibility -->
-    <link rel="icon" href="/renovo/favicon/favicon.ico">
-    <link rel="icon" type="image/x-icon" href="/renovo/favicon/favicon.ico" />
+    <link rel="icon" href="/renovo/favicon/favicon.ico" sizes="any">
+    <link rel="shortcut icon" href="/renovo/favicon/favicon.ico" type="image/x-icon">
     <link rel="icon" type="image/png" sizes="16x16" href="/renovo/favicon/favicon-16x16.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/renovo/favicon/favicon-32x32.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/renovo/favicon/apple-touch-icon.png" />
@@ -22,8 +22,26 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
+    <!-- Preconnect to map tile origins for faster loading -->
+    <link rel="preconnect" href="https://a.basemaps.cartocdn.com" crossorigin>
+    <link rel="preconnect" href="https://b.basemaps.cartocdn.com" crossorigin>
+    <link rel="preconnect" href="https://c.basemaps.cartocdn.com" crossorigin>
+    
+    <!-- Preload critical LCP image -->
+    <link rel="preload" as="image" href="/renovo/bath-hero.jpeg" fetchpriority="high">
+    
+    <!-- Critical CSS for above-the-fold content -->
+    <style>
+      :root{--radius:0.625rem;--background:oklch(1 0 0);--foreground:oklch(0.145 0 0);--primary:oklch(0.45 0.14 265);--primary-foreground:oklch(1 0 0);--muted-foreground:oklch(0.556 0 0);--border:oklch(0.922 0 0)}
+      *{margin:0;padding:0;box-sizing:border-box}
+      body{font-family:system-ui,-apple-system,sans-serif;background:var(--background);color:var(--foreground);line-height:1.5;-webkit-font-smoothing:antialiased}
+      #root{min-height:100vh;display:flex;flex-direction:column}
+      .container{width:100%;max-width:1280px;margin:0 auto;padding:0 1rem}
+      img{max-width:100%;height:auto;display:block}
+    </style>
+    
     <!-- SEO Meta Tags -->
-    <title>Bath Resurfacing Cape Town | Bathtub Reglazing & Re-enameling | Renovo Cape</title>
+    <title>Renovo Cape | Bath Resurfacing Cape Town | Bathtub Reglazing & Re-enameling</title>
     <meta name="description" content="Best bath resurfacing company in Cape Town. Expert bathtub reglazing, bath re-enameling & bathroom restoration. Fix peeling bath coating, cracked enamel & make old baths look new. Acrylic, cast iron & enamel bath repair. 60+ years experience. 5-year warranty. Alternative to replacing a bath." />
     <meta name="keywords" content="bath resurfacing cape town, bathtub resurfacing, bath re enameling, bath reglazing, bathtub reglazing, bathroom resurfacing, enamel bath repair, bath restoration, bathtub repair services, bath coatings, cast iron bath repair, acrylic bath repair, resurfacing contractors, bath re enameling cape town, bathtub repair cape town, bath restoration western cape, bath enamel repair near me, southern suburbs bath repair, cape town bathroom restoration, fix peeling bath coating, repair cracked bath enamel, make old bath look new, restore rusted bath, cheap bath repair options, alternative to replacing a bath, best bath resurfacing company cape town" />
     <meta name="robots" content="index, follow" />
@@ -33,7 +51,7 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://renovo.co.za/" />
-    <meta property="og:title" content="Bath Resurfacing & Bathtub Reglazing Cape Town | Renovo Cape" />
+    <meta property="og:title" content="Renovo Cape | Bath Resurfacing & Bathtub Reglazing Cape Town" />
     <meta property="og:description" content="Best bath resurfacing company in Cape Town. Make your old bath look new. Expert bathtub reglazing & re-enameling. 60+ years experience. 5-year warranty." />
     <meta property="og:image" content="https://renovo.co.za/renovo/bath-social-image.jpeg" />
     <meta property="og:locale" content="en_ZA" />
@@ -41,7 +59,7 @@
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Bath Resurfacing & Bathtub Reglazing Cape Town | Renovo Cape" />
+    <meta name="twitter:title" content="Renovo Cape | Bath Resurfacing & Bathtub Reglazing Cape Town" />
     <meta name="twitter:description" content="Best bath resurfacing company in Cape Town. Make your old bath look new. Expert bathtub reglazing & re-enameling. 60+ years experience." />
     <meta name="twitter:image" content="https://renovo.co.za/renovo/bath-social-image.jpeg" />
     
@@ -52,7 +70,14 @@
       "@type": "LocalBusiness",
       "name": "Renovo Cape",
       "description": "Best bath resurfacing company in Cape Town. Expert bathtub reglazing, bath re-enameling, and bathroom restoration services. Fix peeling bath coating, repair cracked bath enamel, and make old baths look new. 60+ years experience with 5-year warranty. Alternative to replacing a bath - 50-70% cheaper.",
-      "image": "https://renovo.co.za/renovo/logo-square.jpeg",
+      "image": [
+        "https://renovo.co.za/renovo/logo-square.jpeg",
+        "https://renovo.co.za/renovo/bath-after-restored-1.jpeg",
+        "https://renovo.co.za/renovo/bath-after-restored-2.jpeg",
+        "https://renovo.co.za/renovo/bath-re-enameling.jpg",
+        "https://renovo.co.za/renovo/sink-counter-re-enameling.jpg",
+        "https://renovo.co.za/renovo/bath-process-worker.jpeg"
+      ],
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "43 Scouts Pl, Pinelands",
@@ -233,10 +258,23 @@
       ]
     }
     </script>
-    <script type="module" crossorigin src="/assets/index-C1WYJP39.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-CEwVFkF_.css">
+    <script type="module" crossorigin src="/assets/index-D9PTWK9i.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DqAdmukW.css">
   </head>
   <body>
     <div id="root"></div>
+    
+    <!-- Performance monitoring -->
+    <script>
+      // Report Web Vitals to console in development
+      if (window.location.hostname === 'localhost') {
+        const observer = new PerformanceObserver((list) => {
+          for (const entry of list.getEntries()) {
+            console.log(entry.name, Math.round(entry.startTime + entry.duration), 'ms');
+          }
+        });
+        observer.observe({ entryTypes: ['navigation', 'resource', 'paint'] });
+      }
+    </script>
   </body>
 </html>

@@ -32,10 +32,10 @@ const features = [
 
 const AboutUs = () => {
   useDocumentMeta({
-    title: "About Renovo Cape | Bath Re-enameling & Restoration Experts Cape Town",
+    title: "Renovo Cape | About Us - Bath Re-enameling & Restoration Experts Cape Town",
     description: "Cape Town's trusted bath re-enameling & restoration specialists. 60+ years experience, 5-year warranty. Serving Western Cape with quality service.",
     keywords: "about renovo cape, restoration company cape town, re-enameling experts, bath restoration western cape, professional restoration services",
-    ogTitle: "About Renovo Cape | Cape Town's Re-enameling Experts",
+    ogTitle: "Renovo Cape | About Us - Cape Town's Re-enameling Experts",
     ogDescription: "Over 60 years of combined experience in restoration and re-enameling. 5-year warranty on all work. Serving all of Cape Town and Western Cape.",
     ogUrl: "https://renovo.co.za/about-us",
     canonical: "https://renovo.co.za/about-us"
@@ -74,7 +74,14 @@ const AboutUs = () => {
         "priceRange": "$$",
         "paymentAccepted": "Cash, Bank Transfer",
         "openingHours": "Mo-Fr 08:00-17:00",
-        "image": "https://renovo.co.za/renovo/logo-square.jpeg"
+        "image": [
+          "https://renovo.co.za/renovo/logo-square.jpeg",
+          "https://renovo.co.za/renovo/bath-after-restored-1.jpeg",
+          "https://renovo.co.za/renovo/bath-after-restored-2.jpeg",
+          "https://renovo.co.za/renovo/bath-re-enameling.jpg",
+          "https://renovo.co.za/renovo/sink-counter-re-enameling.jpg",
+          "https://renovo.co.za/renovo/bath-process-worker.jpeg"
+        ]
       }
     };
 
@@ -339,7 +346,7 @@ const AboutUs = () => {
             </h2>
             <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
               Get your free, no-obligation quote today. Let's discuss how we can restore your 
-              home to its former glory. <Link to="/" className="underline hover:no-underline">Return to homepage</Link> to see our work.
+              home to its former glory.
             </p>
             <a
               href="https://wa.me/27611990191?text=Hi%20Renovo%20Cape%2C%20I%27d%20like%20a%20free%20quote%20for%20restoration%20work."

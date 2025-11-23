@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { useDocumentMeta } from "@/hooks/useDocumentMeta";
@@ -159,14 +160,41 @@ const faqCategories = [
 
 const FAQ = () => {
   useDocumentMeta({
-    title: "FAQ - Frequently Asked Questions | Bath Resurfacing & Sink Repair | Renovo Cape",
+    title: "Renovo Cape | FAQ - Bath Resurfacing & Sink Repair Questions",
     description: "Answers to common questions about bath resurfacing, sink repair, re-enameling, and restoration services in Cape Town. Learn about costs, process, warranty, and materials.",
     keywords: "bath resurfacing faq, sink repair questions, re-enameling cost, how long does bath resurfacing last, can you fix cracked sink, bath restoration questions, tile resurfacing faq, counter top restoration",
-    ogTitle: "FAQ - Bath Resurfacing & Restoration Questions | Renovo Cape",
+    ogTitle: "Renovo Cape | FAQ - Bath Resurfacing & Restoration Questions",
     ogDescription: "Get answers about bath resurfacing, sink repair, costs, warranty, and our restoration process in Cape Town.",
     ogUrl: "https://renovo.co.za/faq",
     canonical: "https://renovo.co.za/faq"
   });
+
+  // Add FAQPage structured data for rich results
+  useEffect(() => {
+    const faqStructuredData = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqCategories.flatMap(category => 
+        category.questions.map(faq => ({
+          "@type": "Question",
+          "name": faq.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.answer
+          }
+        }))
+      )
+    };
+
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(faqStructuredData);
+    document.head.appendChild(script);
+
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
 
   return (
     <div className="min-h-screen bg-background flex flex-col font-sans antialiased">

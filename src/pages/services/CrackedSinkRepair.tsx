@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { useDocumentMeta } from "@/hooks/useDocumentMeta";
@@ -30,14 +31,67 @@ const repairTypes = [
 
 const CrackedSinkRepair = () => {
   useDocumentMeta({
-    title: "Fix Cracked Sink Cape Town | Sink Repair & Basin Crack Repair | Renovo Cape",
+    title: "Renovo Cape | Fix Cracked Sink Cape Town - Sink & Basin Repair",
     description: "Expert cracked sink repair in Cape Town. Fix cracked sinks, chipped baths, damaged basins & broken toilets. Fast, affordable repairs with warranty. Porcelain, enamel, acrylic & ceramic repair specialists.",
     keywords: "fix cracked sink, cracked sink repair, sink crack repair, chipped sink repair, basin crack repair, broken sink repair, porcelain sink repair, ceramic sink repair, enamel sink repair, acrylic sink repair, bathroom sink repair cape town, kitchen sink repair, vanity sink repair, fix chipped bath, repair cracked basin",
-    ogTitle: "Fix Cracked Sink Cape Town | Renovo Cape",
+    ogTitle: "Renovo Cape | Fix Cracked Sink Cape Town",
     ogDescription: "Expert cracked sink repair. Fix cracks, chips & damage in sinks, baths & basins. Fast, affordable with warranty.",
     ogUrl: "https://renovo.co.za/services/cracked-sink-repair",
     canonical: "https://renovo.co.za/services/cracked-sink-repair"
   });
+
+  // Add Service and Image structured data for rich results
+  useEffect(() => {
+    const serviceStructuredData = {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Cracked Sink & Basin Repair",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Renovo Cape",
+        "url": "https://renovo.co.za",
+        "telephone": "+27742025700",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Parow",
+          "addressRegion": "Western Cape",
+          "addressCountry": "ZA"
+        }
+      },
+      "areaServed": {
+        "@type": "State",
+        "name": "Western Cape, South Africa"
+      },
+      "description": "Expert repair of cracked sinks, chipped baths, damaged basins, and broken toilets. We fix chips, cracks, and holes in porcelain, enamel, acrylic, and ceramic sanitaryware at 70-80% less than replacement cost. Warranty included.",
+      "offers": {
+        "@type": "Offer",
+        "priceRange": "$$",
+        "availability": "https://schema.org/InStock"
+      },
+      "image": {
+        "@type": "ImageObject",
+        "contentUrl": "https://renovo.co.za/renovo/bath-before-damage-closeup.jpeg",
+        "url": "https://renovo.co.za/renovo/bath-before-damage-closeup.jpeg",
+        "name": "Cracked Sink and Bath Damage - Before Repair",
+        "description": "Close-up detail of fixture damage including chips, cracks and surface wear requiring professional re-enameling restoration by Renovo Cape",
+        "creator": {
+          "@type": "Organization",
+          "name": "Renovo Cape"
+        },
+        "creditText": "Renovo Cape",
+        "copyrightNotice": "© Renovo Cape. All rights reserved."
+      }
+    };
+
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(serviceStructuredData);
+    document.head.appendChild(script);
+
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
 
   return (
     <div className="min-h-screen bg-background flex flex-col font-sans antialiased">
@@ -124,6 +178,10 @@ const CrackedSinkRepair = () => {
                   src="/renovo/bath-before-damage-closeup.jpeg"
                   alt="Cracked sink before repair - Cape Town"
                   className="rounded-2xl shadow-xl mb-4"
+                  loading="lazy"
+                  decoding="async"
+                  width="800"
+                  height="600"
                 />
               </div>
             </div>

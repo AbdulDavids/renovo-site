@@ -1,4 +1,5 @@
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { useEffect } from "react";
 
 const images = [
   {
@@ -58,6 +59,47 @@ const images = [
 ];
 
 const Gallery = () => {
+  // Add ImageObject structured data for all gallery images
+  useEffect(() => {
+    const imageStructuredData = {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "itemListElement": images.map((image, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "item": {
+          "@type": "ImageObject",
+          "contentUrl": `https://renovo.co.za${image.src}`,
+          "url": `https://renovo.co.za${image.src}`,
+          "name": image.label,
+          "description": image.alt,
+          "creator": {
+            "@type": "Organization",
+            "name": "Renovo Cape"
+          },
+          "creditText": "Renovo Cape",
+          "copyrightNotice": "© Renovo Cape. All rights reserved.",
+          "acquireLicensePage": "https://renovo.co.za/#contact",
+          "license": "https://renovo.co.za/#contact",
+          "isPartOf": {
+            "@type": "WebPage",
+            "name": "Renovo Cape Gallery - Bath Resurfacing Before & After",
+            "url": "https://renovo.co.za/#gallery"
+          }
+        }
+      }))
+    };
+
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(imageStructuredData);
+    document.head.appendChild(script);
+
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
+
   return (
     <section id="gallery" className="py-20">
       <div className="container mx-auto px-4">
@@ -80,6 +122,8 @@ const Gallery = () => {
                     src={image.src}
                     alt={image.alt}
                     className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div className="absolute inset-0 bg-black/0 transition-colors group-hover:bg-black/20" />
                   <div className="absolute bottom-4 left-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm font-medium backdrop-blur-sm">
@@ -92,6 +136,8 @@ const Gallery = () => {
                   src={image.src} 
                   alt={image.alt} 
                   className="w-full h-auto rounded-lg shadow-2xl"
+                  loading="lazy"
+                  decoding="async"
                 />
               </DialogContent>
             </Dialog>

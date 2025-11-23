@@ -1,4 +1,4 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -25,14 +25,67 @@ const materials = [
 
 const BathResurfacing = () => {
   useDocumentMeta({
-    title: "Bath Resurfacing Cape Town | Bath Re-enameling & Refinishing | Renovo Cape",
+    title: "Renovo Cape | Bath Resurfacing Cape Town - Re-enameling & Refinishing",
     description: "Professional bath resurfacing and re-enameling in Cape Town. Restore acrylic, enamel, cast iron & fibreglass baths. 50-70% cheaper than replacement. 5-year warranty. Free quotes.",
     keywords: "bath resurfacing cape town, bath re-enameling, bath refinishing, resurface bath, bath restoration, acrylic bath repair, enamel bath resurfacing, cast iron bath restoration, fibreglass bath repair, bath resurfacing cost, bath resurfacing near me",
-    ogTitle: "Bath Resurfacing Cape Town | Renovo Cape",
+    ogTitle: "Renovo Cape | Bath Resurfacing Cape Town",
     ogDescription: "Professional bath resurfacing & re-enameling. 50-70% cheaper than replacement. 5-year warranty. Free quotes.",
     ogUrl: "https://renovo.co.za/services/bath-resurfacing",
     canonical: "https://renovo.co.za/services/bath-resurfacing"
   });
+
+  // Add Service and Image structured data for rich results
+  useEffect(() => {
+    const serviceStructuredData = {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Bath Resurfacing & Re-enameling",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Renovo Cape",
+        "url": "https://renovo.co.za",
+        "telephone": "+27742025700",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Parow",
+          "addressRegion": "Western Cape",
+          "addressCountry": "ZA"
+        }
+      },
+      "areaServed": {
+        "@type": "State",
+        "name": "Western Cape, South Africa"
+      },
+      "description": "Professional bath resurfacing and re-enameling services in Cape Town. We restore acrylic, enamel, cast iron, and fibreglass baths to look brand new at 50-70% less than replacement cost. 5-year warranty included.",
+      "offers": {
+        "@type": "Offer",
+        "priceRange": "$$",
+        "availability": "https://schema.org/InStock"
+      },
+      "image": {
+        "@type": "ImageObject",
+        "contentUrl": "https://renovo.co.za/renovo/bath-after-restored-1.jpeg",
+        "url": "https://renovo.co.za/renovo/bath-after-restored-1.jpeg",
+        "name": "Professional Bath Resurfacing Result - Cape Town",
+        "description": "Fully restored bath with pristine white enamel finish showcasing flawless results after complete resurfacing and re-enameling by Renovo Cape",
+        "creator": {
+          "@type": "Organization",
+          "name": "Renovo Cape"
+        },
+        "creditText": "Renovo Cape",
+        "copyrightNotice": "© Renovo Cape. All rights reserved."
+      }
+    };
+
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(serviceStructuredData);
+    document.head.appendChild(script);
+
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
 
   return (
     <div className="min-h-screen bg-background flex flex-col font-sans antialiased">
