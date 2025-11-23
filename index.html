@@ -13,14 +13,32 @@
     <meta charset="UTF-8" />
     
     <!-- Favicons - Multiple formats for better compatibility -->
-    <link rel="icon" href="/renovo/favicon/favicon.ico">
-    <link rel="icon" type="image/x-icon" href="/renovo/favicon/favicon.ico" />
+    <link rel="icon" href="/renovo/favicon/favicon.ico" sizes="any">
+    <link rel="shortcut icon" href="/renovo/favicon/favicon.ico" type="image/x-icon">
     <link rel="icon" type="image/png" sizes="16x16" href="/renovo/favicon/favicon-16x16.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/renovo/favicon/favicon-32x32.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/renovo/favicon/apple-touch-icon.png" />
     <link rel="manifest" href="/renovo/favicon/site.webmanifest" />
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Preconnect to map tile origins for faster loading -->
+    <link rel="preconnect" href="https://a.basemaps.cartocdn.com" crossorigin>
+    <link rel="preconnect" href="https://b.basemaps.cartocdn.com" crossorigin>
+    <link rel="preconnect" href="https://c.basemaps.cartocdn.com" crossorigin>
+    
+    <!-- Preload critical LCP image -->
+    <link rel="preload" as="image" href="/renovo/bath-hero.jpeg" fetchpriority="high">
+    
+    <!-- Critical CSS for above-the-fold content -->
+    <style>
+      :root{--radius:0.625rem;--background:oklch(1 0 0);--foreground:oklch(0.145 0 0);--primary:oklch(0.45 0.14 265);--primary-foreground:oklch(1 0 0);--muted-foreground:oklch(0.556 0 0);--border:oklch(0.922 0 0)}
+      *{margin:0;padding:0;box-sizing:border-box}
+      body{font-family:system-ui,-apple-system,sans-serif;background:var(--background);color:var(--foreground);line-height:1.5;-webkit-font-smoothing:antialiased}
+      #root{min-height:100vh;display:flex;flex-direction:column}
+      .container{width:100%;max-width:1280px;margin:0 auto;padding:0 1rem}
+      img{max-width:100%;height:auto;display:block}
+    </style>
     
     <!-- SEO Meta Tags -->
     <title>Bath Resurfacing Cape Town | Bathtub Reglazing & Re-enameling | Renovo Cape</title>
@@ -237,5 +255,18 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Performance monitoring -->
+    <script>
+      // Report Web Vitals to console in development
+      if (window.location.hostname === 'localhost') {
+        const observer = new PerformanceObserver((list) => {
+          for (const entry of list.getEntries()) {
+            console.log(entry.name, Math.round(entry.startTime + entry.duration), 'ms');
+          }
+        });
+        observer.observe({ entryTypes: ['navigation', 'resource', 'paint'] });
+      }
+    </script>
   </body>
 </html>
