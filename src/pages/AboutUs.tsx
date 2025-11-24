@@ -85,13 +85,25 @@ const AboutUs = () => {
       }
     };
 
+    const scriptId = 'about-us-structured-data';
+    
+    // Remove any existing About Us structured data script
+    const existingScript = document.getElementById(scriptId);
+    if (existingScript) {
+      existingScript.remove();
+    }
+
     const script = document.createElement('script');
+    script.id = scriptId;
     script.type = 'application/ld+json';
     script.text = JSON.stringify(structuredData);
     document.head.appendChild(script);
 
     return () => {
-      document.head.removeChild(script);
+      const scriptToRemove = document.getElementById(scriptId);
+      if (scriptToRemove) {
+        scriptToRemove.remove();
+      }
     };
   }, []);
 

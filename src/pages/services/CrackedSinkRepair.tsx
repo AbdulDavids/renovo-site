@@ -83,13 +83,25 @@ const CrackedSinkRepair = () => {
       }
     };
 
+    const scriptId = 'cracked-sink-repair-structured-data';
+    
+    // Remove any existing Cracked Sink Repair structured data script
+    const existingScript = document.getElementById(scriptId);
+    if (existingScript) {
+      existingScript.remove();
+    }
+
     const script = document.createElement('script');
+    script.id = scriptId;
     script.type = 'application/ld+json';
     script.text = JSON.stringify(serviceStructuredData);
     document.head.appendChild(script);
 
     return () => {
-      document.head.removeChild(script);
+      const scriptToRemove = document.getElementById(scriptId);
+      if (scriptToRemove) {
+        scriptToRemove.remove();
+      }
     };
   }, []);
 

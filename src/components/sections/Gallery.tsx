@@ -90,13 +90,25 @@ const Gallery = () => {
       }))
     };
 
+    const scriptId = 'gallery-structured-data';
+    
+    // Remove any existing Gallery structured data script
+    const existingScript = document.getElementById(scriptId);
+    if (existingScript) {
+      existingScript.remove();
+    }
+
     const script = document.createElement('script');
+    script.id = scriptId;
     script.type = 'application/ld+json';
     script.text = JSON.stringify(imageStructuredData);
     document.head.appendChild(script);
 
     return () => {
-      document.head.removeChild(script);
+      const scriptToRemove = document.getElementById(scriptId);
+      if (scriptToRemove) {
+        scriptToRemove.remove();
+      }
     };
   }, []);
 

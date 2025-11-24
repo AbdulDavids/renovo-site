@@ -171,6 +171,14 @@ const FAQ = () => {
 
   // Add FAQPage structured data for rich results
   useEffect(() => {
+    const scriptId = 'faq-structured-data';
+    
+    // Remove any existing FAQ structured data script
+    const existingScript = document.getElementById(scriptId);
+    if (existingScript) {
+      existingScript.remove();
+    }
+
     const faqStructuredData = {
       "@context": "https://schema.org",
       "@type": "FAQPage",
@@ -187,12 +195,16 @@ const FAQ = () => {
     };
 
     const script = document.createElement('script');
+    script.id = scriptId;
     script.type = 'application/ld+json';
     script.text = JSON.stringify(faqStructuredData);
     document.head.appendChild(script);
 
     return () => {
-      document.head.removeChild(script);
+      const scriptToRemove = document.getElementById(scriptId);
+      if (scriptToRemove) {
+        scriptToRemove.remove();
+      }
     };
   }, []);
 

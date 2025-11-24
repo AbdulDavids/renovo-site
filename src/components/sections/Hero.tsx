@@ -66,11 +66,21 @@ const Hero = () => {
             className="relative mx-auto w-full max-w-[500px] lg:max-w-none"
           >
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border bg-muted">
-               <img 
-                src="/renovo/bath-hero.jpeg" 
-                alt="Professional re-enameling and restoration - beautifully restored fixtures" 
-                className="w-full h-auto object-cover aspect-[4/3]"
-              />
+              <picture>
+                <source 
+                  srcSet="/renovo/bath-hero.jpeg" 
+                  type="image/jpeg"
+                />
+                <img 
+                  src="/renovo/bath-hero.jpeg" 
+                  alt="Professional re-enameling and restoration - beautifully restored fixtures" 
+                  className="w-full h-auto object-cover aspect-[4/3]"
+                  fetchPriority="high"
+                  loading="eager"
+                  width="800"
+                  height="600"
+                />
+              </picture>
               <div className="absolute inset-0 ring-1 ring-inset ring-black/10 rounded-2xl" />
             </div>
             {/* Floating Badge */}
