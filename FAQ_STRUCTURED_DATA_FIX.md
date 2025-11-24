@@ -3,24 +3,47 @@
 ## Issue
 Google Search Console reported: **"Duplicate field 'FAQPage'"** for renovo.co.za
 
-This error occurred because multiple FAQ structured data scripts were being added to the page, causing Google to detect duplicate schema.org markup.
+This critical error occurred because TWO separate FAQPage structured data schemas were present on the FAQ page simultaneously, causing Google to detect duplicate schema.org markup.
 
 ## Root Cause
-When using React Router for client-side navigation in a Single Page Application (SPA), the cleanup function in `useEffect` hooks could fail to properly remove script tags due to:
+
+### Primary Issue: Hardcoded FAQPage in index.html
+The main problem was a **hardcoded FAQPage schema in `index.html`** (lines 181-252) that appeared on ALL pages, including the FAQ page itself. This meant:
+
+1. **Homepage and all pages**: Had an 8-question FAQ schema (inappropriate)
+2. **FAQ page specifically**: Had BOTH the hardcoded 8-question schema AND the dynamic 31-question schema from `FAQ.tsx`
+
+This created the duplicate FAQPage error when Google crawled `/faq`.
+
+### Secondary Issue: SPA Navigation Script Management
+Additionally, when using React Router for client-side navigation, the cleanup function in `useEffect` hooks could fail to properly remove dynamically added script tags due to:
 1. Race conditions during component unmounting
 2. Lost references to script elements during re-renders
-3. Multiple navigation cycles accumulating scripts in the document head
+3. Multiple navigation cycles potentially accumulating scripts
 
 ## Solution Applied
 
-### What Was Fixed
-Updated all pages and components that inject structured data scripts to use a unique ID-based approach:
+### Fix 1: Removed Hardcoded FAQPage from index.html (PRIMARY FIX)
+**File**: `index.html` (lines 180-252)
+
+Removed the hardcoded FAQPage schema that was appearing on all pages. This schema should only exist on the dedicated FAQ page (`/faq`), not site-wide.
+
+**Why this matters**:
+- FAQ structured data should only appear on pages dedicated to FAQs
+- Having it in `index.html` made it load on every page
+- On the `/faq` page, it conflicted with the proper, comprehensive FAQ schema
+- This was the direct cause of the "Duplicate field 'FAQPage'" error
+
+### Fix 2: Improved Dynamic Script Management (PREVENTATIVE)
+Updated all pages and components that dynamically inject structured data scripts to use a unique ID-based approach:
 
 1. **FAQ Page** (`src/pages/FAQ.tsx`)
 2. **About Us Page** (`src/pages/AboutUs.tsx`)
 3. **Bath Resurfacing Service** (`src/pages/services/BathResurfacing.tsx`)
 4. **Cracked Sink Repair Service** (`src/pages/services/CrackedSinkRepair.tsx`)
 5. **Gallery Component** (`src/components/sections/Gallery.tsx`)
+
+This prevents potential script accumulation during SPA navigation.
 
 ### Implementation Pattern
 
@@ -80,9 +103,11 @@ useEffect(() => {
 ## Expected Results
 
 ✅ **No more duplicate FAQPage errors** in Google Search Console
+✅ **FAQPage schema only appears on the FAQ page** (not site-wide)
 ✅ **Proper structured data cleanup** during page navigation
 ✅ **No accumulation of script tags** in the document head
 ✅ **Better SEO and Rich Results eligibility**
+✅ **Reduced HTML size** (index.html: 12.45 kB → 9.08 kB)
 
 ## Testing
 
